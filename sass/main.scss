@@ -55,21 +55,50 @@ nav {
 
 
 .container {
-  width: 350px;
+  width: 400px;
   margin: 20px auto;
 
-  input {
+  .home {
+    height: 500px;
+    width: 400px;
     border-radius: 4px;
+    background-color: #FFFFFF;
+    padding: 40px;
+
+
+    h5 {
+      margin-top: 0;
+    }
+
+    .comments {
+    margin-left: 0;
+
+    li {
+      font-size: 15px;
+      color: #666666;
+    }
   }
 
-  button {
-    background-color: #AFAFAF;
-    border-radius: 4px;
-    padding: 10px 26px 11px 26px;  
-    font-size: 16px;
   }
 
-  textarea {
-    height: 150px;
+  .add {
+
+    input {
+      border-radius: 4px;
+    }
+
+    button {
+      background-color: #AFAFAF;
+      border-radius: 4px;
+      padding: 10px 26px 11px 26px;  
+      font-size: 16px;
+    }
+
+    textarea {
+      height: 150px;
+    }
   }
+
+  
+
 }

@@ -6419,16 +6419,29 @@ nav {
     background: #FFFFFF !important; }
 
 .container {
-  width: 350px;
+  width: 400px;
   margin: 20px auto; }
-  .container input {
+  .container .home {
+    height: 500px;
+    width: 400px;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    padding: 40px; }
+    .container .home h5 {
+      margin-top: 0; }
+    .container .home .comments {
+      margin-left: 0; }
+      .container .home .comments li {
+        font-size: 15px;
+        color: #666666; }
+  .container .add input {
     border-radius: 4px; }
-  .container button {
+  .container .add button {
     background-color: #AFAFAF;
     border-radius: 4px;
     padding: 10px 26px 11px 26px;
     font-size: 16px; }
-  .container textarea {
+  .container .add textarea {
     height: 150px; }
 
 /*# sourceMappingURL=main.css.map */

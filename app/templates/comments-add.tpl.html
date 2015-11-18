@@ -1,9 +1,11 @@
-<h4>Contact Us</h4>
+<div class="add">
+  <h5>Contact Us</h5>
 
-<form ng-submit="vm.addComment(comment)">
-  <input placeholder="Name" ng-model="comment.name"><span>{{ msgN }}</span>
-  <input placeholder="Email" ng-model="comment.email"><span>{{ msgE }}</span>
-  <input placeholder="Website" ng-model="comment.website"><span>{{ msgW }}</span>
- <textarea placeholder="Your comments" ng-model="comment.message"></textarea><span>{{ msgM }}</span>
-  <button>Submit</button>
-</form>
+  <form ng-submit="vm.addComment(comment)">
+    <input placeholder="Name" ng-model="comment.name"><span>{{ msgN }}</span>
+    <input placeholder="Email" ng-model="comment.email"><span>{{ msgE }}</span>
+    <input placeholder="Website" ng-model="comment.website"><span>{{ msgW }}</span>
+   <textarea placeholder="Your Comments" ng-model="comment.message"></textarea><span>{{ msgM }}</span>
+    <button>Submit</button>
+  </form>
+</div>

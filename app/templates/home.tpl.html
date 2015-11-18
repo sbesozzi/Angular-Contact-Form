@@ -1,9 +1,9 @@
-<h4>Comments</h4>
+<div class="home">
+  <h5>Comments</h5>
+  <hr>
 
-<ul ng-repeat="comment in vm.comments">
-  <!-- <li>{{ comment.name }}</li>
-  <li>{{ comment.email }}</li>
-  <li>{{ comment.website }}</li> -->
-  <li>{{ comment.message }}</li>
-
-</ul>
+  <ul class="comments" ng-repeat="comment in vm.comments">
+    <li>Name: {{ comment.name }}</li>
+    <li>Comment: {{ comment.message }}</li>
+  </ul>
+</div>
