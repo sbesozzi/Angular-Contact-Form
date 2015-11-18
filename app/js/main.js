@@ -50,7 +50,7 @@ module.exports = exports['default'];
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
-var ContactsAddController = function ContactsAddController(ContactService) {
+var ContactsAddController = function ContactsAddController($state, ContactService) {
 
   var vm = this;
 
@@ -64,7 +64,7 @@ var ContactsAddController = function ContactsAddController(ContactService) {
   }
 };
 
-ContactsAddController.$inject = ['ContactService'];
+ContactsAddController.$inject = ['$state', 'ContactService'];
 
 exports['default'] = ContactsAddController;
 module.exports = exports['default'];

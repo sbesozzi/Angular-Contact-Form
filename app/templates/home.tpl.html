@@ -1,1 +1,7 @@
 <h4>Contact List</h4>
+
+<ul>
+  <li ng-repeat="contact in contacts">
+    <a href="#/{{ contact.id }}">{{ contact.comment}}</a>
+  </li>
+</ul>

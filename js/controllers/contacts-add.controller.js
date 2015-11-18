@@ -1,4 +1,4 @@
-let ContactsAddController = function(ContactService) {
+let ContactsAddController = function($state, ContactService) {
   
   let vm = this;
 
@@ -13,6 +13,6 @@ let ContactsAddController = function(ContactService) {
 
 };
 
-ContactsAddController.$inject = ['ContactService'];
+ContactsAddController.$inject = ['$state', 'ContactService'];
 
 export default ContactsAddController;
