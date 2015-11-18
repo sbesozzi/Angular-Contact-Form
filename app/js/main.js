@@ -56,8 +56,8 @@ var CommentsAddController = function CommentsAddController($state, $scope, Comme
 
   vm.addComment = addComment;
 
-  function addComment(obj) {
-    CommentService.addComment(obj).then(function (res) {
+  function addComment(commentObj) {
+    CommentService.addComment(commentObj).then(function (res) {
       console.log(res);
       $state.go('root.home');
     });
@@ -65,9 +65,8 @@ var CommentsAddController = function CommentsAddController($state, $scope, Comme
 
   // Validation for form fields
   var validateName = function validateName(name) {
-    console.log(name.length);
     if (name.length <= 1) {
-      $scope.msgN = 'name must be filled out';
+      $scope.msgN = 'Name must be filled out';
     } else {
       $scope.msgN = '';
     }
@@ -76,7 +75,7 @@ var CommentsAddController = function CommentsAddController($state, $scope, Comme
   var validateEmail = function validateEmail(email) {
     var emailSym = email.indexOf('@');
     if (emailSym <= 0) {
-      $scope.msgE = 'email must include @';
+      $scope.msgE = 'Email must include @';
     } else {
       $scope.msgE = '';
     }
@@ -87,7 +86,7 @@ var CommentsAddController = function CommentsAddController($state, $scope, Comme
     var val2 = website.indexOf('https://');
 
     if (val < 0 && val2 < 0) {
-      $scope.msgW = 'web address must include http:// or https://';
+      $scope.msgW = 'Address must include "http://" or "https://"';
     } else {
       $scope.msgW = '';
     }
@@ -95,7 +94,7 @@ var CommentsAddController = function CommentsAddController($state, $scope, Comme
 
   var validateMessage = function validateMessage(message) {
     if (message.length <= 0) {
-      $scope.msgM = 'share your comments';
+      $scope.msgM = 'Share your comments';
     } else {
       $scope.msgM = '';
     }
@@ -103,18 +102,22 @@ var CommentsAddController = function CommentsAddController($state, $scope, Comme
 
   // Watch events
   $scope.$watch('comment.name', function (name) {
+    if (!name) return;
     validateName(name);
   });
 
   $scope.$watch('comment.email', function (email) {
+    if (!email) return;
     validateEmail(email);
   });
 
   $scope.$watch('comment.website', function (website) {
+    if (!website) return;
     validateWebsite(website);
   });
 
   $scope.$watch('comment.message', function (message) {
+    if (!message) return;
     validateMessage(message);
   });
 };
@@ -195,19 +198,19 @@ var CommentService = function CommentService($http, PARSE) {
   this.getComments = getComments;
   this.addComment = addComment;
 
-  var Comment = function Comment(obj) {
-    this.name = obj.name;
-    this.email = obj.email;
-    this.website = obj.website;
-    this.message = obj.message;
-  };
+  function Comment(commentObj) {
+    this.name = commentObj.name;
+    this.email = commentObj.email;
+    this.website = commentObj.website;
+    this.message = commentObj.message;
+  }
 
   function getComments() {
     return $http.get(url, PARSE.CONFIG);
   }
 
-  function addComment(obj) {
-    var c = new Comment(obj);
+  function addComment(commentObj) {
+    var c = new Comment(commentObj);
     return $http.post(url, c, PARSE.CONFIG);
   }
 };

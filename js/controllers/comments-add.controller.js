@@ -4,8 +4,8 @@ let CommentsAddController = function($state, $scope, CommentService) {
 
   vm.addComment = addComment;
 
-  function addComment (obj) {
-    CommentService.addComment(obj).then( (res) => {
+  function addComment (commentObj) {
+    CommentService.addComment(commentObj).then( (res) => {
       console.log(res);
       $state.go('root.home');
     });
@@ -13,9 +13,8 @@ let CommentsAddController = function($state, $scope, CommentService) {
 
   // Validation for form fields
   let validateName = (name) => {
-    console.log(name.length);
     if (name.length <= 1) {
-      $scope.msgN = 'name must be filled out';
+      $scope.msgN = 'Name must be filled out';
     } else {
       $scope.msgN = '';
     }
@@ -24,7 +23,7 @@ let CommentsAddController = function($state, $scope, CommentService) {
   let validateEmail = (email) => {
     let emailSym = email.indexOf('@');
     if (emailSym <= 0) {
-      $scope.msgE = 'email must include @';
+      $scope.msgE = 'Email must include @';
     } else {
       $scope.msgE = '';
     }
@@ -35,7 +34,7 @@ let CommentsAddController = function($state, $scope, CommentService) {
     let val2 = website.indexOf('https://');
 
     if ((val < 0) && (val2 < 0)) {
-      $scope.msgW = 'web address must include http:// or https://';
+      $scope.msgW = 'Address must include "http://" or "https://"';
     } else {
       $scope.msgW = '';
     }
@@ -43,7 +42,7 @@ let CommentsAddController = function($state, $scope, CommentService) {
 
   let validateMessage = (message) => {
     if (message.length <= 0) {
-      $scope.msgM = 'share your comments';
+      $scope.msgM = 'Share your comments';
     } else {
       $scope.msgM = '';
     }
@@ -51,18 +50,22 @@ let CommentsAddController = function($state, $scope, CommentService) {
 
   // Watch events
   $scope.$watch('comment.name', function(name) {
+    if (!name) return;
     validateName(name);
   });
 
   $scope.$watch('comment.email', function(email) {
+    if (!email) return;
     validateEmail(email);
   });
 
   $scope.$watch('comment.website', function(website) {
+    if (!website) return;
     validateWebsite(website);
   });
 
   $scope.$watch('comment.message', function(message) {
+    if (!message) return;
     validateMessage(message);
   });
 

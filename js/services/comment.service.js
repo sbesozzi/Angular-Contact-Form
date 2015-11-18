@@ -6,19 +6,19 @@ let CommentService = function($http, PARSE) {
   this.getComments = getComments;
   this.addComment = addComment;
 
-  let Comment = function (obj) {
-    this.name = obj.name;
-    this.email = obj.email;
-    this.website = obj.website;
-    this.message = obj.message;
-  };
+  function Comment (commentObj) {
+    this.name = commentObj.name;
+    this.email = commentObj.email;
+    this.website = commentObj.website;
+    this.message = commentObj.message;
+  }
 
   function getComments () {
     return $http.get(url, PARSE.CONFIG);
   }
 
-  function  addComment (obj) {
-    let c = new Comment(obj);
+  function addComment (commentObj) {
+    let c = new Comment(commentObj);
     return $http.post(url, c, PARSE.CONFIG);
   }
 

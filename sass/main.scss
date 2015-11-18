@@ -3,10 +3,23 @@
 @import "foundation";
 
 body {
-  background: #e2ebf3;
+  background: #E9E9E9;
+}
+
+ul {
+  list-style: none;
 }
 
 .container {
-  width: 600px;
+  width: 350px;
   margin: 20px auto;
+
+  input {
+    border-radius: 4px;
+  }
+
+  button {
+    background-color: #AFAFAF;
+    border-radius: 4px;
+  }
 }

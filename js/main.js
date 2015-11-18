@@ -15,11 +15,7 @@ angular
   .module('app', ['ui.router'])
   .config(config)
   .constant('PARSE', PARSE)
-
   .controller('HomeController', HomeController)
   .controller('CommentsAddController', CommentsAddController)
-
   .service('CommentService', CommentService)
-
-
 ;
