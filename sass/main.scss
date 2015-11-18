@@ -10,6 +10,50 @@ ul {
   list-style: none;
 }
 
+.top-bar {
+  background: #FFFFFF;
+  height: 3rem;
+
+  .title-area .name a {
+    color: #84878B;
+    font-size: 1.1rem;
+
+  }
+}
+
+nav {
+  border-bottom: 1px solid #E1E3DF;
+
+  .top-bar-section .right {
+    // border-bottom: 1px solid #cccccc;
+    height: 25px;
+
+    li {
+      margin-left: 15px;
+     } 
+  }
+
+  .top-bar-section li a:not(.button) {
+      background: #FFFFFF !important;
+      color: #84878B; 
+      font-size: 0.90rem 
+  }
+
+  .top-bar-section li a:not(.button):hover {
+      background: #FFFFFF !important;
+      color: #84878B;   
+  }
+
+  .top-bar-section ul li.active > a {
+      background: #FFFFFF !important;   
+  }
+
+  .top-bar-section ul li.active > a:hover {
+      background: #FFFFFF !important;   
+  }
+}
+
+
 .container {
   width: 350px;
   margin: 20px auto;
@@ -21,5 +65,11 @@ ul {
   button {
     background-color: #AFAFAF;
     border-radius: 4px;
+    padding: 10px 26px 11px 26px;  
+    font-size: 16px;
+  }
+
+  textarea {
+    height: 150px;
   }
 }
