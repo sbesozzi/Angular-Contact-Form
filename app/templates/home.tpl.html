@@ -1,7 +1,9 @@
-<h4>Contact List</h4>
+<h4>Comment List</h4>
 
-<ul>
-  <li ng-repeat="contact in contacts">
-    <a href="#/{{ contact.id }}">{{ contact.comment}}</a>
-  </li>
+<ul ng-repeat="comment in vm.comments">
+  <li>{{ comment.name }}</li>
+  <li>{{ comment.email }}</li>
+  <li>{{ comment.website }}</li>
+  <li>{{ comment.message }}</li>
+
 </ul>

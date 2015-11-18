@@ -5,11 +5,11 @@ import config from './config';
 
 // Controllers
 import HomeController from './controllers/home.controller';
-import ContactsAddController from './controllers/contacts-add.controller';
+import CommentsAddController from './controllers/comments-add.controller';
 
 import PARSE from './constants/parse.constants.js';
 
-import ContactService from './services/contact.service.js';
+import CommentService from './services/comment.service.js';
 
 angular
   .module('app', ['ui.router'])
@@ -17,9 +17,9 @@ angular
   .constant('PARSE', PARSE)
 
   .controller('HomeController', HomeController)
-  .controller('ContactsAddController', ContactsAddController)
+  .controller('CommentsAddController', CommentsAddController)
 
-  .service('ContactService', ContactService)
+  .service('CommentService', CommentService)
 
 
 ;

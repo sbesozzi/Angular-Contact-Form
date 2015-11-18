@@ -1,6 +1,6 @@
 let config = function($stateProvider, $urlRouterProvider) {
   
-  $urlRouterProvider.otherwise('./');
+  $urlRouterProvider.otherwise('/');
 
   $stateProvider
     .state('root', {
@@ -12,10 +12,10 @@ let config = function($stateProvider, $urlRouterProvider) {
       controller: 'HomeController as vm',
       templateUrl: 'templates/home.tpl.html'
     })
-    .state('root.addContact', {
+    .state('root.addComment', {
       url: '/add',
-      controller: 'ContactsAddController as vm',
-      templateUrl: 'templates/contacts-add.tpl.html'
+      controller: 'CommentsAddController as vm',
+      templateUrl: 'templates/comments-add.tpl.html'
     });
 
 };
