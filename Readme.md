@@ -1,7 +1,7 @@
 ## Angular Contact Form
 
 > A simple contact form using AngularJS
-- http://sbesozzi.angularcontactform.surge.sh/#/
+- Deployed version at http://sbesozzi.angularcontactform.surge.sh/#/
 
 
 ## Usage
